@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import React from "react";
 import {
   Button,
   StyleSheet,
@@ -12,16 +13,18 @@ import data from "../data";
 
 const Home = ({ navigation }) => {
   const [list, setList] = useState("");
+  const [number, setNumber] = useState("");
+
   const play = () => {
     setList("");
     {
-      data.player.push({ name: list });
+      data.player.push({ name: list, id: number, card: "" });
     }
   };
   const press = () => {
     play();
   };
-  const del = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>GodFather</Text>

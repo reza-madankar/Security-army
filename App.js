@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screen/Home";
 import Posts from "./screen/Posts";
 import Comments from "./screen/Comments";
+import Random from "./screen/Random";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Posts" component={Posts} />
         <Stack.Screen name="Comments" component={Comments} />
+        <Stack.Screen name="Random" component={Random} />
       </Stack.Navigator>
     </NavigationContainer>
   );
