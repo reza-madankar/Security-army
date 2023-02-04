@@ -1,49 +1,58 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import React from "react";
 import {
   Button,
   StyleSheet,
   Text,
-  View,
   TextInput,
   SafeAreaView,
 } from "react-native";
 import data from "../data";
 
 const Home = ({ navigation }) => {
-  const [list, setList] = useState("");
-  const [number, setNumber] = useState("");
+  const [playerName, setPlayerName] = useState("");
 
   const play = () => {
-    setList("");
-    {
-      data.player.push({ name: list, id: number, card: "" });
+    if (playerName.length > 0) {
+      const playerId =
+        data.player && data.player.length > 0
+          ? data.player[data.player.length - 1].id + 1
+          : 1;
+      data.player.push({
+        name: playerName,
+        id: playerId,
+        card: "",
+        visible: false,
+      });
+      setPlayerName("");
     }
-  };
-  const press = () => {
-    play();
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>GodFather</Text>
-      <Text style={styles.playerName}>Add player</Text>
       <TextInput
+        placeholder="Add player"
         style={styles.TextInput}
-        onChangeText={(item) => setList(item)}
-        value={list}
+        onChangeText={(item) => setPlayerName(item)}
+        value={playerName}
       ></TextInput>
-      <Button title="Add" onPress={press}></Button>
+      <Button title="Add" style={styles.btn} onPress={play}></Button>
       {data.player.map((item) => (
-        <Text style={styles.button}>{item.name}</Text>
+        <Text
+          style={styles.button}
+        >
+          {item.name}
+        </Text>
       ))}
-      <Button
-        title="Next"
-        onPress={() => {
-          navigation.navigate("Posts");
-        }}
-      ></Button>
+      {data.player && data.player.length > 0 && (
+        <Button
+          title="Next"
+          onPress={() => {
+            navigation.navigate("Posts");
+          }}
+        ></Button>
+      )}
     </SafeAreaView>
   );
 };
@@ -55,11 +64,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   TextInput: {
+    paddingHorizontal: 10,
     borderWidth: 1,
     borderColor: "black",
     width: 265,
     height: 40,
     borderRadius: 10,
+    marginBottom: 30,
   },
   title: {
     fontSize: 60,
