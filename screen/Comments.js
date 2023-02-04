@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 import React, { useState } from "react";
 import data from "../data";
-data;
+
 const Comments = ({ navigation }) => {
+
+
   return (
     <View style={styles.dis}>
       <Text>
@@ -14,7 +16,7 @@ const Comments = ({ navigation }) => {
             }}
           >
             {"                             "}
-            {item.card}
+            {item.name}
             {"                             "}
           </Text>
         ))}
@@ -40,7 +42,5 @@ const styles = StyleSheet.create({
     color: "red",
   },
   player1: {},
-  dis: {
-    display: "block",
-  },
+  dis: {},
 });

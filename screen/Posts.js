@@ -4,6 +4,21 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import data from "../data";
 
 export default function Posts({ navigation }) {
+  // data.player.map((item) => {
+  //   const randomCard = (player, cards) => {
+  //     if (player && cards && player.length === cards.length) {
+  //       for (let i = 0; i < player.length; i++) {
+  //         let currentPlayer = player[i];
+  //         let randomIndex = Math.floor(Math.random() * cards.length);
+  //         player = player.map((x) =>
+  //           x.id === currentPlayer.id ? { ...x, card: cards[randomIndex] } : x
+  //         );
+  //         cards.splice(randomIndex, 1);
+  //       }
+  //     }
+  //   };
+  // });
+
   var [godfather, setGodfather] = useState(false);
   var [saolgoodman, setSaolgoodman] = useState(false);
   var [matador, setMatador] = useState(false);
@@ -23,77 +38,77 @@ export default function Posts({ navigation }) {
 
   const GodFather = () => {
     {
-      data.player.push({ card: "GodFather" });
+      data.player.push(JSON.stringify({ card: "GodFather" }));
     }
   };
   const SaolGoodman = () => {
     {
-      data.player.push({ card: "SaolGoodman" });
+      data.player.push(JSON.stringify({ card: "SaolGoodman" }));
     }
   };
   const Matador = () => {
     {
-      data.player.push({ card: "Matador" });
+      data.player.push(JSON.stringify({ card: "Matador" }));
     }
   };
   const NormalMafia = () => {
     {
-      data.player.push({ card: "NormalMafia" });
+      data.player.push(JSON.stringify({ card: "NormalMafia" }));
     }
   };
   const Professional = () => {
     {
-      data.player.push({ card: "Professional" });
+      data.player.push(JSON.stringify({ card: "Professional" }));
     }
   };
   const DrWatson = () => {
     {
-      data.player.push({ card: "DrWatson" });
+      data.player.push(JSON.stringify({ card: "DrWatson" }));
     }
   };
   const Konstantin = () => {
     {
-      data.player.push({ card: "Konstantin" });
+      data.player.push(JSON.stringify({ card: "Konstantin" }));
     }
   };
   const Kain = () => {
     {
-      data.player.push({ card: "Kain" });
+      data.player.push(JSON.stringify({ card: "Kain" }));
     }
   };
   const Nosradamoos = () => {
     {
-      data.player.push({ card: "Nosradamoos" });
+      data.player.push(JSON.stringify({ card: "Nosradamoos" }));
     }
   };
   const Citizen1 = () => {
     {
-      data.player.push({ card: "Citizen1" });
+      data.player.push(JSON.stringify({ card: "Citizen1" }));
     }
   };
   const Citizen2 = () => {
     {
-      data.player.push({ card: "Citizen2" });
+      data.player.push(JSON.stringify({ card: "Citizen2" }));
     }
   };
   const Citizen3 = () => {
     {
-      data.player.push({ card: "Citizen3" });
+      data.player.push(JSON.stringify({ card: "Citizen3" }));
     }
   };
   const Citizen4 = () => {
     {
-      data.player.push({ card: "Citizen4" });
+      data.player.push(JSON.stringify({ card: "Citizen4" }));
     }
   };
   const Citizen5 = () => {
     {
-      data.player.push({ card: "Citizen5" });
+      data.player.push(JSON.stringify({ card: "Citizen5" }));
     }
   };
   const Citizen6 = () => {
     {
-      data.player.push({ card: "Citizen6" });
+      data.player.push(JSON.stringify({ card: "Citizen6" }));
     }
   };
   return (
@@ -106,7 +121,7 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               GodFather();
-              
+
               setGodfather(!godfather);
             }
           }}
@@ -120,7 +135,7 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               SaolGoodman();
-             
+
               setSaolgoodman(!saolgoodman);
             }
           }}
@@ -134,7 +149,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Matador();
-              alert(10);
               setMatador(!matador);
             }
           }}
@@ -148,7 +162,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               NormalMafia();
-              alert(10);
               setNormalmafia(!normalmafia);
             }
           }}
@@ -163,7 +176,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Professional();
-              alert(10);
               setProfessional(!professional);
             }
           }}
@@ -177,7 +189,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               DrWatson();
-              alert(10);
               setDrwatson(!drwatson);
             }
           }}
@@ -191,7 +202,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Konstantin();
-              alert(10);
               setKonstantin(!konstantin);
             }
           }}
@@ -205,7 +215,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Kain();
-              alert(10);
               setKain(!kain);
             }
           }}
@@ -219,7 +228,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Nosradamoos();
-              alert(10);
               setNosradamoos(!nosradamoos);
             }
           }}
@@ -233,7 +241,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen1();
-              alert(10);
               setCitizen1(!citizen1);
             }
           }}
@@ -247,7 +254,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen2();
-              alert(10);
               setCitizen2(!citizen2);
             }
           }}
@@ -261,7 +267,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen3();
-              alert(30);
               setCitizen3(!citizen3);
             }
           }}
@@ -275,7 +280,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen4();
-              alert(40);
               setCitizen4(!citizen4);
             }
           }}
@@ -289,7 +293,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen5();
-              alert(50);
               setCitizen5(!citizen5);
             }
           }}
@@ -303,7 +306,6 @@ export default function Posts({ navigation }) {
           onValueChange={() => {
             {
               Citizen6();
-              alert(60);
               setCitizen6(!citizen6);
             }
           }}
@@ -314,6 +316,7 @@ export default function Posts({ navigation }) {
         title="Next"
         onPress={() => {
           navigation.navigate("Comments");
+          randomCard();
         }}
       ></Button>
     </View>
