@@ -24,7 +24,7 @@ export default function Posts({ navigation }) {
   const randomCard = () => {
     if (data.player.length !== selectedCard.length) {
       Alert.alert(
-        `Player: ${data.player.length} - Card Selected: ${selectedCard.length} `
+        `  خطا : تعداد بازیکن ها  : ${data.player.length}  و   تعداد کارت ها :  ${selectedCard.length} `
       );
     } else {
       let cards = selectedCard;
@@ -39,14 +39,13 @@ export default function Posts({ navigation }) {
         cards.splice(randomIndex, 1);
       }
 
-      navigation.navigate("Comments");
+      navigation.navigate("تقسیم نقش ها");
     }
   };
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.mafia}>مافیا</Text>
-
+      <Text style={styles.mafia}>نقش ها</Text>
       {data.cardName.map((item) => (
         <View style={styles.section}>
           <Text>{item.placeHolder} </Text>
@@ -66,7 +65,7 @@ export default function Posts({ navigation }) {
 
       {selectedCard && selectedCard.length > 0 && (
         <Button
-          title="Next"
+          title="تقسیم نقش ها"
           onPress={() => {
             randomCard();
           }}
@@ -82,21 +81,21 @@ const styles = StyleSheet.create({
     marginVertical: 32,
   },
   section: {
-    flex: 1,
-    flexDirection: "row",
+    flexWrap: "wrap",
+    alignContent: "center",
     alignItems: "center",
-    justifyContent: "center",
   },
   paragraph: {
     textAlign: "center",
     flex: 1,
-    fontSize: 25,
+    fontSize: 65,
   },
   select: {
     backgroundColor: "blue",
   },
   mafia: {
-    fontSize: 50,
+    fontSize: 30,
     textAlign: "right",
+    color: "green",
   },
 });

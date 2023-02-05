@@ -13,9 +13,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Posts" component={Posts} />
-        <Stack.Screen name="Comments" component={Comments} />
+        <Stack.Screen name=" انتخاب بازیکن ها" component={Home} />
+        <Stack.Screen name="انتخاب نقش ها" component={Posts} />
+        <Stack.Screen name="تقسیم نقش ها" component={Comments} />
         <Stack.Screen name="Random" component={Random} />
       </Stack.Navigator>
     </NavigationContainer>
