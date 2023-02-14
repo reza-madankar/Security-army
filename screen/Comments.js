@@ -7,18 +7,21 @@ const Comments = ({ navigation }) => {
     <View style={styles.dis}>
       <Text>
         {data.player.map((item) => (
-          <Button
-            title={item.name}
+          <Text
+            style={styles.player}
             onPress={() => {
               Alert.alert(item.card);
             }}
-          ></Button>
+          >
+            {item.name}
+            {"                                       "}
+          </Text>
         ))}
       </Text>
       <Button
-        title="Next"
+        title="صفحه راوی"
         onPress={() => {
-          navigation.navigate("Random");
+          navigation.navigate("صفحه راوی");
         }}
       ></Button>
     </View>
@@ -29,7 +32,12 @@ export default Comments;
 
 const styles = StyleSheet.create({
   player: {
-    fontSize: 60,
+    textAlign: "center",
+    fontSize: 40,
+    padding: 40,
+    margin: 40,
+    flex: 1,
+    color: "black",
   },
   player1: {},
   dis: {},

@@ -12,51 +12,68 @@ import data from "../data";
 
 const Home = ({ navigation }) => {
   const [playerName, setPlayerName] = useState("");
+  const [player, setPlayer] = useState([]);
 
   const play = () => {
     if (playerName.length > 0) {
       const playerId =
-        data.player && data.player.length > 0
-          ? data.player[data.player.length - 1].id + 1
-          : 1;
-      data.player.push({
-        name: playerName,
-        id: playerId,
-        card: "",
-        visible: false,
-      });
+        player && player.length > 0 ? player[player.length - 1].id + 1 : 1;
+
+      setPlayer([
+        ...player,
+        {
+          name: playerName,
+          id: playerId,
+          card: "",
+          visible: false,
+        },
+      ]);
+
       setPlayerName("");
     }
   };
 
+  const removePlayer = (id) => {
+    setPlayer(player.filter((x) => x.id !== id));
+  };
+
+  const nextPage = () => {
+    if (player.length > 0) {
+      data.player = player;
+      navigation.navigate("انتخاب نقش ها");
+    }
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <Text style={styles.title}>GodFather</Text>
+    <ScrollView>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.title}>پدرخوانده</Text>
         <TextInput
-          placeholder="نام بازیکن را وارد کنید"
+          placeholder="اسم بازیکن ها رو تایپ کنید"
           style={styles.TextInput}
           onChangeText={(item) => setPlayerName(item)}
           value={playerName}
         ></TextInput>
-        <Text style={styles.counter}>{`تعدادبازیکن های انتخاب شده  : ${[
-          data.player.length,
-        ]}`}</Text>
+        <Text
+          style={styles.counter}
+        >{`تعداد بازیکن ها : ${player.length}`}</Text>
         <Button title="اضافه کردن" style={styles.btn} onPress={play}></Button>
-        {data.player.map((item) => (
-          <Text style={styles.players}>{item.name}</Text>
+        {player.map((item) => (
+          <>
+            <Text style={styles.button}>{item.name}</Text>
+            <Button title="حذف" onPress={() => removePlayer(item.id)}></Button>
+          </>
         ))}
-
-        {data.player && data.player.length > 0 && (
+        {player && player.length > 0 && (
           <Button
             title="انتخاب نقش ها"
             onPress={() => {
-              navigation.navigate("انتخاب نقش ها");
+              nextPage();
             }}
           ></Button>
         )}
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -73,28 +90,29 @@ const styles = StyleSheet.create({
     width: 265,
     height: 40,
     borderRadius: 10,
-    marginBottom: 30,
-    textAlign: "center",
+    marginBottom: 20,
+    textAlign: "right",
+    marginTop: 20,
   },
   title: {
-    fontSize: 60,
+    fontSize: 50,
+    color: "white",
+    backgroundColor: "black",
+    width: "100%",
+    textAlign: "center",
+  },
+  playerName: {
+    fontSize: 15,
+    textAlign: "center",
+  },
+  button: {
+    fontSize: 15,
     textAlign: "center",
   },
   counter: {
     fontSize: 20,
-    textAlign: "center",
-  },
-  playerName: {
-    fontSize: 25,
-    textAlign: "center",
-  },
-  players: {
-    textAlign: "right",
-    fontSize: 30,
-  },
-  button: {
-    fontSize: 40,
-    textAlign: "right",
+    fontWeight: "bold",
+    marginBottom: 10,
   },
 });
 

@@ -17,6 +17,13 @@ const data = {
     { title: "citizen5", placeHolder: "شهروند ساده" },
     { title: "citizen6", placeHolder: "شهروند ساده" },
   ],
+  endCards: [
+    { title: "card1", placeHolder: "سکوت بره ها" },
+    { title: "card2", placeHolder: "تغییر چهره" },
+    { title: "card3", placeHolder: "دستبند" },
+    { title: "card4", placeHolder: "افشای هویت" },
+    { title: "card5", placeHolder: "ذهن زیبا" },
+  ],
 };
 
 export default data;
