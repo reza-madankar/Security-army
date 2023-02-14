@@ -5,17 +5,17 @@ import data from "../data";
 const Comments = ({ navigation }) => {
   return (
     <View style={styles.dis}>
-      <Text>
+      <Text style={styles.mafia}>تقسیم تقش ها</Text>
+      <Text style={styles.player2}>
         {data.player.map((item) => (
-          <Text
-            style={styles.player}
-            onPress={() => {
-              Alert.alert(item.card);
-            }}
-          >
-            {item.name}
-            {"                                       "}
-          </Text>
+          <View style={styles.button}>
+            <Button
+              onPress={() => {
+                Alert.alert(item.card);
+              }}
+              title={item.name}
+            ></Button>
+          </View>
         ))}
       </Text>
       <Button
@@ -31,14 +31,20 @@ const Comments = ({ navigation }) => {
 export default Comments;
 
 const styles = StyleSheet.create({
-  player: {
-    textAlign: "center",
-    fontSize: 40,
-    padding: 40,
-    margin: 40,
-    flex: 1,
-    color: "black",
+  player: {},
+  player2: { marginTop: 20 },
+  button: {
+    borderColor: "black",
+    borderWidth: 1,
+    padding: 2,
+    borderRadius: 10,
+    margin: 15,
   },
-  player1: {},
-  dis: {},
+  mafia: {
+    fontSize: 50,
+    color: "white",
+    backgroundColor: "black",
+    width: "100%",
+    textAlign: "center",
+  },
 });

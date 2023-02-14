@@ -51,7 +51,6 @@ export default function Posts({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.mafia}>نقش ها</Text>
-
       {data.cardName.map((item) => (
         <View style={styles.section}>
           <Text style={styles.section1}>{item.placeHolder} </Text>
