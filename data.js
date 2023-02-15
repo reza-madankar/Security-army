@@ -24,6 +24,12 @@ const data = {
     { title: "card4", placeHolder: "افشای هویت" },
     { title: "card5", placeHolder: "ذهن زیبا" },
   ],
+  images: [
+    { name: "img1", uri: require("./mafiacard.jpg") },
+    { name: "img2", uri: require("./images(1).jpeg") },
+    { name: "img3", uri: require("./images(2).jpeg") },
+    { name: "img4", uri: require("./images.jpeg") },
+  ],
 };
 
 export default data;

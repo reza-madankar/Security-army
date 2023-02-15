@@ -1,11 +1,15 @@
-import { Button, StyleSheet, Text, Alert, View, Image } from "react-native";
-import React from "react";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  Alert,
+  View,
+  Image,
+  Pressable,
+} from "react-native";
 import data from "../data";
 
 const Cards = () => {
-  const randomcard = () => {
-    alert();
-  };
   return (
     <View style={styles.cards}>
       {data.endCards.map((item) => (
@@ -14,13 +18,7 @@ const Cards = () => {
           onPress={() => {
             Alert.alert(item.placeHolder);
           }}
-        >
-          <Image
-            style={styles.image}
-            source={require("../mafiacard.jpg")}
-          ></Image>
-          ;
-        </Button>
+        ></Button>
       ))}
     </View>
   );
@@ -34,7 +32,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
+    textAlign: "center",
     width: 120,
     height: 130,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
   },
 });

@@ -7,13 +7,12 @@ import {
   TextInput,
   SafeAreaView,
   ScrollView,
+  View,
 } from "react-native";
 import data from "../data";
-
 const Home = ({ navigation }) => {
   const [playerName, setPlayerName] = useState("");
   const [player, setPlayer] = useState([]);
-
   const play = () => {
     if (playerName.length > 0) {
       const playerId =
@@ -113,6 +112,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+  },
+  cards: {
+    fontSize: 25,
+    margin: 20,
   },
 });
 

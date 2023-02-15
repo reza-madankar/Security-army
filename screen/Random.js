@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,13 +7,12 @@ import {
   ScrollView,
   Pressable,
 } from "react-native";
-import React from "react";
 import data from "../data";
-
 const Random = ({ navigation }) => {
+
   const Pressable = () => {
     navigation.navigate("کارت آخر");
-    alert(10);
+ 
   };
   return (
     <ScrollView>
