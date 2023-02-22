@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   StyleSheet,
@@ -10,13 +11,22 @@ import {
 import data from "../data";
 
 const Cards = () => {
+  const onPressLastCard = (endCardTitle, placeHolder) => {
+    data.endCards.filter((x) => x.title === endCardTitle)[0];
+
+    var randomPlaceHolder = Math.floor(
+      Math.random() * data.endCardsPlaceHolder.length
+    );
+    alert(JSON.stringify(data.endCardsPlaceHolder[randomPlaceHolder]));
+  };
+
   return (
     <View style={styles.cards}>
       {data.endCards.map((item) => (
         <Button
           title={item.title}
           onPress={() => {
-            Alert.alert(item.placeHolder);
+            onPressLastCard(item.title);
           }}
         ></Button>
       ))}

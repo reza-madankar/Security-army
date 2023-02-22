@@ -34,6 +34,7 @@ export default function Posts({ navigation }) {
 
       for (let i = 0; i < data.player.length; i++) {
         let currentPlayer = data.player[i];
+
         let randomIndex = Math.floor(Math.random() * cards.length);
 
         data.player = data.player.map((x) =>

@@ -24,6 +24,13 @@ const data = {
     { title: "card4", placeHolder: "افشای هویت" },
     { title: "card5", placeHolder: "ذهن زیبا" },
   ],
+  endCardsPlaceHolder: [
+    { id: 1, placeHolder: "سکوت بره ها" },
+    { id: 2, placeHolder: "تغییر چهره" },
+    { id: 3, placeHolder: "دستبند" },
+    { id: 4, placeHolder: "افشای هویت" },
+    { id: 5, placeHolder: "ذهن زیبا" },
+  ],
   images: [
     { name: "img1", uri: require("./mafiacard.jpg") },
     { name: "img2", uri: require("./images(1).jpeg") },

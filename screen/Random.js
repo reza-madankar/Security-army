@@ -9,10 +9,8 @@ import {
 } from "react-native";
 import data from "../data";
 const Random = ({ navigation }) => {
-
   const Pressable = () => {
     navigation.navigate("کارت آخر");
- 
   };
   return (
     <ScrollView>
@@ -27,6 +25,7 @@ const Random = ({ navigation }) => {
           ))}
         </Text>
         <Button
+          key={data.endCards}
           onPress={() => {
             Pressable();
           }}

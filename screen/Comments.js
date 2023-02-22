@@ -10,6 +10,7 @@ const Comments = ({ navigation }) => {
         {data.player.map((item) => (
           <View style={styles.button}>
             <Button
+              key={data.endCards}
               onPress={() => {
                 Alert.alert(item.card);
               }}
@@ -36,9 +37,9 @@ const styles = StyleSheet.create({
   button: {
     borderColor: "black",
     borderWidth: 1,
-    padding: 2,
+    padding: 1,
     borderRadius: 10,
-    margin: 15,
+    margin: 10,
   },
   mafia: {
     fontSize: 50,

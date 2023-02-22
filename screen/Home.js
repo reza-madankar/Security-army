@@ -56,7 +56,12 @@ const Home = ({ navigation }) => {
         <Text
           style={styles.counter}
         >{`تعداد بازیکن ها : ${player.length}`}</Text>
-        <Button title="اضافه کردن" style={styles.btn} onPress={play}></Button>
+        <Button
+          title="اضافه کردن"
+          style={styles.btn}
+          key={data.player}
+          onPress={play}
+        ></Button>
         {player.map((item) => (
           <>
             <Text style={styles.button}>{item.name}</Text>
