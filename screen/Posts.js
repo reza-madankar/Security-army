@@ -51,16 +51,15 @@ export default function Posts({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.mafia}>نقش ها</Text>
       {data.cardName.map((item) => (
         <View style={styles.section}>
           <Text style={styles.section1}>{item.placeHolder} </Text>
           <Switch
             style={styles.swich}
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
+            trackColor={{ false: "#767577", true: "#999118" }}
             thumbColor={
               selectedCard.filter((x) => x.title === item.title).length > 0
-                ? "#2986cc"
+                ? "red"
                 : "#f4f3f4"
             }
             ios_backgroundColor="#3e3e3e"
@@ -77,6 +76,7 @@ export default function Posts({ navigation }) {
       {selectedCard && selectedCard.length > 0 && (
         <Button
           title="تقسیم نقش ها"
+          color="orange"
           onPress={() => {
             randomCard();
           }}
@@ -87,13 +87,15 @@ export default function Posts({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: "#3f3f3f",
+  },
   section: {
     flexDirection: "row",
-    fontSize: 40,
   },
+
   paragraph: {},
-  section1: { flex: 1, fontSize: 30, textAlign: "center" },
+  section1: { flex: 1, fontSize: 30, textAlign: "center", color: "white", borderBottomColor:"white",borderWidth:5 },
 
   mafia: {
     fontSize: 50,

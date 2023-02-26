@@ -1,9 +1,0 @@
-import { View, Text, Button } from "react-native";
-
-function Home() {
-  <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <Text>Homsdsde</Text>
-  </View>;
-}
-
-export default Home;

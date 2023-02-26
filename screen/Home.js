@@ -17,7 +17,6 @@ const Home = ({ navigation }) => {
     if (playerName.length > 0) {
       const playerId =
         player && player.length > 0 ? player[player.length - 1].id + 1 : 1;
-
       setPlayer([
         ...player,
         {
@@ -25,17 +24,15 @@ const Home = ({ navigation }) => {
           id: playerId,
           card: "",
           visible: false,
+          room: "900",
         },
       ]);
-
       setPlayerName("");
     }
   };
-
   const removePlayer = (id) => {
     setPlayer(player.filter((x) => x.id !== id));
   };
-
   const nextPage = () => {
     if (player.length > 0) {
       data.player = player;
@@ -46,30 +43,46 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>پدرخوانده</Text>
+        <Text style={styles.title}>Security Army</Text>
         <TextInput
+          placeholderTextColor="white"
           placeholder="اسم بازیکن ها رو تایپ کنید"
           style={styles.TextInput}
+          onSubmitEditing={play}
           onChangeText={(item) => setPlayerName(item)}
           value={playerName}
         ></TextInput>
-        <Text
-          style={styles.counter}
-        >{`تعداد بازیکن ها : ${player.length}`}</Text>
         <Button
+          color="#999118"
           title="اضافه کردن"
           style={styles.btn}
           key={data.player}
           onPress={play}
         ></Button>
-        {player.map((item) => (
-          <>
-            <Text style={styles.button}>{item.name}</Text>
-            <Button title="حذف" onPress={() => removePlayer(item.id)}></Button>
-          </>
-        ))}
+        <Text
+          style={styles.counter}
+        >{`تعداد بازیکن ها : ${player.length}`}</Text>
+
+        <View style={styles.playerName}>
+          {player.map((item) => (
+            <>
+              <Text style={styles.button}>
+                <View style={styles.delButton}>
+                  <Button
+                    color="#999118"
+                    title="X"
+                    onPress={() => removePlayer(item.id)}
+                  ></Button>
+                </View>
+                {item.name}
+              </Text>
+            </>
+          ))}
+        </View>
+
         {player && player.length > 0 && (
           <Button
+            color="orange"
             title="انتخاب نقش ها"
             onPress={() => {
               nextPage();
@@ -83,40 +96,44 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#3f3f3f",
   },
   TextInput: {
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: "black",
-    width: 265,
-    height: 40,
-    borderRadius: 10,
-    marginBottom: 20,
+    backgroundColor: "##3f3f3f",
+    borderWidth: 2,
+    borderColor: "white",
+    padding: 10,
+    borderRadius: 5,
+    margin: 5,
+    marginTop: 10,
+    marginBottom: 10,
     textAlign: "right",
-    marginTop: 20,
+    color: "white",
   },
   title: {
-    fontSize: 50,
+    backgroundColor: "#3f3f3f",
+    fontSize: 25,
     color: "white",
-    backgroundColor: "black",
-    width: "100%",
     textAlign: "center",
   },
   playerName: {
-    fontSize: 15,
-    textAlign: "center",
+    backgroundColor: "#3f3f3f",
   },
+  delButton: {},
   button: {
-    fontSize: 15,
-    textAlign: "center",
+    color: "white",
+    fontSize: 25,
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 5,
+    margin: 5,
   },
   counter: {
+    color: "white",
     fontSize: 20,
-    fontWeight: "bold",
     marginBottom: 10,
+    textAlign: "center",
   },
   cards: {
     fontSize: 25,

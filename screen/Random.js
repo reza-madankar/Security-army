@@ -6,12 +6,14 @@ import {
   Button,
   ScrollView,
   Pressable,
+  Switch,
 } from "react-native";
 import data from "../data";
 const Random = ({ navigation }) => {
   const Pressable = () => {
     navigation.navigate("کارت آخر");
   };
+
   return (
     <ScrollView>
       <View style={styles.player}>
@@ -20,7 +22,7 @@ const Random = ({ navigation }) => {
             <View>
               <Text
                 style={styles.player2}
-              >{`        ${item.card}          :        ${item.name}             `}</Text>
+              >{`        ${item.card}          :        ${item.name}       `}</Text>
             </View>
           ))}
         </Text>

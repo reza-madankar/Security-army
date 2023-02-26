@@ -5,26 +5,31 @@ import data from "../data";
 const Comments = ({ navigation }) => {
   return (
     <View style={styles.dis}>
-      <Text style={styles.mafia}>تقسیم تقش ها</Text>
       <Text style={styles.player2}>
         {data.player.map((item) => (
           <View style={styles.button}>
-            <Button
+            <Text
+              style={styles.btn}
+              color="#999118"
               key={data.endCards}
               onPress={() => {
                 Alert.alert(item.card);
               }}
-              title={item.name}
-            ></Button>
+            >
+              {item.name}
+            </Text>
           </View>
         ))}
       </Text>
-      <Button
-        title="صفحه راوی"
-        onPress={() => {
-          navigation.navigate("صفحه راوی");
-        }}
-      ></Button>
+      <View>
+        <Button
+          color="orange"
+          title="صفحه راوی"
+          onPress={() => {
+            navigation.navigate("صفحه راوی");
+          }}
+        ></Button>
+      </View>
     </View>
   );
 };
@@ -32,14 +37,16 @@ const Comments = ({ navigation }) => {
 export default Comments;
 
 const styles = StyleSheet.create({
-  player: {},
-  player2: { marginTop: 20 },
+  dis: { backgroundColor: "#3f3f3f" },
+  player2: { marginTop: 20, backgroundColor: "#3f3f3f" },
   button: {
     borderColor: "black",
-    borderWidth: 1,
-    padding: 1,
-    borderRadius: 10,
-    margin: 10,
+    borderWidth: 2,
+    borderRadius: 5,
+    textAlign: "center",
+    alignContent: "center",
+
+    alignItems: "center",
   },
   mafia: {
     fontSize: 50,
@@ -47,5 +54,13 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     width: "100%",
     textAlign: "center",
+  },
+  btn: {
+    fontSize: 45,
+    color: "black",
+    margin: 10,
+    padding: 10,
+    backgroundColor: "#999118",
+    
   },
 });
