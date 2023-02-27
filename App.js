@@ -53,7 +53,7 @@ export default function App() {
               fontWeight: "bold",
             },
           }}
-          name="صفحه راوی"
+          name="صفحه صاحب کافه"
           component={Random}
         />
         <Stack.Screen

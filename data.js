@@ -1,21 +1,81 @@
 const data = {
   player: [],
   cardName: [
-    { title: "godfather", placeHolder: "سرهنگ کسلر", room: "0900" },
-    { title: "saolgoodman", placeHolder: "راینهارت", room: "0900" },
-    { title: "matador", placeHolder: "گشتاپو ساده", room: "0900" },
-    { title: "normalmafia", placeHolder: "کرتیس", room: "0900" },
-    { title: "professional", placeHolder: "دکتر پاسگال", room: "0900" },
-    { title: "drwatson", placeHolder: "خلبان", room: "0900" },
-    { title: "konstantin", placeHolder: "مامور نجات", room: "0900" },
-    { title: "kain", placeHolder: " مامور نجات", room: "0900" },
-    { title: "nosradamoos", placeHolder: "مشتری", room: "0900" },
-    { title: "citizen1", placeHolder: " مشتری", room: "0900" },
-    { title: "citizen2", placeHolder: " مشتری", room: "0900" },
-    { title: "citizen3", placeHolder: " مشتری", room: "0900" },
-    { title: "citizen4", placeHolder: " مشتری", room: "0900" },
-    { title: "citizen5", placeHolder: " مشتری", room: "0900" },
-    { title: "citizen6", placeHolder: " مشتری", room: "0900" },
+    {
+      title: "godfather",
+      placeHolder: "سرهنگ کسلر",
+      image: "../assets/images/kessler.jpg",
+    },
+    {
+      title: "saolgoodman",
+      placeHolder: "راینهارت",
+      image: "../assets/images/reinhardt.jpg",
+    },
+    {
+      title: "matador",
+      placeHolder: "گشتاپو ساده",
+      image: "../assets/images/gestapo.jpg",
+    },
+    {
+      title: "normalmafia",
+      placeHolder: "کرتیس",
+      image: "../assets/images/curtis.jpg",
+    },
+    {
+      title: "professional",
+      placeHolder: "دکتر پاسگال",
+      image: "../assets/images/pascal.jpg",
+    },
+    {
+      title: "drwatson",
+      placeHolder: "خلبان",
+      image: "../assets/images/pilot.jpg",
+    },
+    {
+      title: "konstantin",
+      placeHolder: "مامور نجات",
+      image: "../assets/images/partisan.jpg",
+    },
+    {
+      title: "kain",
+      placeHolder: " مامور نجات",
+      image: "../assets/images/partisan.jpg",
+    },
+    {
+      title: "nosradamoos",
+      placeHolder: "مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen1",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen2",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen3",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen4",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen5",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
+    {
+      title: "citizen6",
+      placeHolder: " مشتری",
+      image: "../assets/images/customer.jpg",
+    },
   ],
   endCards: [
     { title: "card1", placeHolder: "سکوت بره ها" },
