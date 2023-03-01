@@ -9,49 +9,49 @@ import {
   Pressable,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../data";
 const Comments = ({ navigation }) => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const k = () => {
-    setModalVisible(!modalVisible);
-  };
+  const [modalVisible, setModalVisible] = useState(null);
+
+  useEffect(() => {
+    console.log(data.player);
+  }, []);
+
   return (
     <View style={styles.dis}>
       <Text style={styles.player2}>
-        {data.player.map((item) => (
-          <View style={styles.button}>
+        {data.player.map((item, i) => (
+          <View style={styles.button} key={i}>
             <Text
               style={styles.btn}
               color="#999118"
-              key={data.endCards}
-              onPress={() => setModalVisible(!modalVisible)}
+              key={i}
+              onPress={() => setModalVisible(item.card)}
             >
-              {item.name}
+              {item.name} --- {item.image}
             </Text>
           </View>
         ))}
       </Text>
-      {data.player.map((x) => (
+      {modalVisible !== null && (
         <Modal
           animationType="slide"
           transparent={true}
-          visible={modalVisible}
+          visible={modalVisible !== null ? true : false}
           onRequestClose={() => {
             alert("Modal has been closed.");
-            setModalVisible(!modalVisible);
+            setModalVisible("");
           }}
         >
-          <>
-            <TouchableOpacity activeOpacity={1} onPress={k}>
-              <Image
-                style={styles.image}
-                source={require("../assets/images/customer.jpg")}
-              ></Image>
-            </TouchableOpacity>
-          </>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>{modalVisible.title}</Text>
+              <Image style={styles.image} source={modalVisible.image}></Image>
+            </View>
+          </View>
         </Modal>
-      ))}
+      )}
       <View>
         <Button
           color="orange"
